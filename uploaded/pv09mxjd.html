@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/fileups.png" type="image/png">
+    <title>Simple CDN Hosting</title>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="title-section">
+                <h1>Simple CDN Hosting</h1>
+                <p>Max upload size is: 22 MB.</p>
+            </div>
+            
+            <div class="header-buttons">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-button" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="https://t.me/FileUploadersss_bot" target="_blank" class="dropdown-item">
+                <i class="fab fa-telegram"></i>
+                <span>Telegram Bot</span>
+            </a>
+        </div>
+
+        <main>
+            <div class="card">
+                <div class="upload-section">
+                    <form id="uploadForm">                 
+                        <div class="upload-area" id="dropArea">
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <div class="upload-text">
+                                <h3>Drag & Drop Files Here</h3>
+                                <p>or click to browse files</p>
+                            </div>
+                            <input type="file" id="fileInput" class="file-input">
+                        </div>
+                        <div class="file-info" id="fileInfo"></div>
+                        <button type="submit" class="button">
+                            <i class="fas fa-upload"></i>
+                            Upload File
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card result-card" id="resultCard">
+                <div class="result-header">
+                    <h2>Upload Result</h2>
+                    <button class="refresh-button" onclick="resetUpload()">
+                  <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                
+                <div class="result-body" id="resultBody"></div>
+            </div>
+        </main>
+
+        <footer>
+            Powered by <a href="https://social-rdwnzsptra.pages.dev" target="_blank">RSCoders</a>
+        </footer>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Uploading...</div>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="progress-percentage">0%</div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
